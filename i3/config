@@ -97,11 +97,17 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #set workspace names
-set $workspace1 "1 Terminals "
-set $workspace2 "2 Mail "
-set $workspace3 "3 Palemoon "
-set $workspace4 "4 Thesis "
-set $workspace5 "5 PDF " 
+set $workspace1 "" 
+set $workspace2 "" 
+set $workspace3 "" 
+set $workspace4 "" 
+set $workspace5 "" 
+
+#1 Terminals 
+#2 Mail 
+#3 Palemoon 
+#4 Thesis 
+#5 PDF 
 
 #bind workspaces to specific screen
 workspace $workspace2 output LVDS1
@@ -198,7 +204,7 @@ client.background       $bg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 
 #set window title+border style
-new_window pixel 2
+new_window pixel 3
 
 #custom keybinds
 bindsym $mod+shift+x exec ./lock.sh
@@ -207,6 +213,8 @@ bindsym $mod+shift+s exec i3exit suspend
 
 #startup programs
 exec --no-startup-id wal -i $HOME/Pictures/Wallpapers
+exec killall -q -g mpd
+exec_always compton --config $HOME/.config/compton/compton.conf -b
 
 #Screenlayouts
 exec_always xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 280x1080 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
