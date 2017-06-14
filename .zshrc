@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerline"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(rand-quote systemd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,3 +86,13 @@ source $ZSH/oh-my-zsh.sh
 # Import colorscheme from 'wal'
 (wal -r &)
 alias lock=' ./lock.sh'
+alias vtop='vtop -t brew'
+#export TERM="xterm-256color"
+
+#powerline options
+POWERLINE_RIGHT_A="date"
+POWERLINE_RIGHT_COLOR_BACK="red"
+POWERLINE_HIDE_HOST_NAME="true"
+POWERLINE_NO_BLANK_LINE="false" 
+POWERLINE_DATE_FORMAT="%D{%d-%m}"
+
