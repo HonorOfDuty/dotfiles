@@ -1,6 +1,7 @@
 [colors]
 background = ${xrdb:color0}
 foreground = ${xrdb:color6}
+foreground-alt=${xrdb:color0}
 
 i3_background = ${xrdb:color3}
 i3_foreground = ${xrdb:color7}
@@ -34,8 +35,10 @@ line-height = 4
 line-size = 3
 
 font-0 = FontAwesome:size=12;
-font-1 = SanFranciscoDisplay:size=14:weight=regular;0;
+font-1 = Hack:size=14:weight=normal;0;
 
+;SanFranSiscoDisplay:size=14:weight=regular;0;
+;
 [bar/center]
 monitor = VGA1
 width = ${const.width}
@@ -48,8 +51,8 @@ line-color = ${colors.line-color}
 
 border-color = ${colors.transparent}
 border-left-size = ${const.border-left-size}
-border-right = ${const.border-right}
-border-top = ${const.border-top}
+border-right-size = ${const.border-right}
+border-top-size = ${const.border-top}
 
 module-margin-left = ${const.module-margin-left}
 module-margin-right = ${const.module-margin-right}
@@ -65,10 +68,10 @@ modules-center = mpd
 modules-right = wireless-network battery volume clock
 
 [bar/left]
-monitor = VGA1
+monitor = HDMI1
 modules-left = i3 
 modules-center = mpd
-modules-right = volume clock
+modules-right = wireless-network battery volume clock
 
 width = ${const.width}
 height = ${const.height}
@@ -79,9 +82,9 @@ foreground = ${colors.foreground}
 line-color = ${colors.line-color}
 
 border-color = ${colors.transparent}
-border-left-size = ${const.boarder-left}
-border-right = ${const.boarder-right}
-border-top = ${const.boarder-top}
+border-left-size = ${const.border-left-size}
+border-right = ${const.border-right}
+border-top = ${const.border-top}
 
 module-margin-left = ${const.module-margin-left}
 module-margin-right = ${const.module-margin-right}
@@ -209,7 +212,7 @@ label-focused-background = ${colors.i3_background}
 label-focused-underline = ${colors.foreground}
 label-focused-padding = 6
 label-focused-maxlen = 2 
-label-focused-ellipsis = False
+label-focused-ellipsis = true
 
 label-unfocused = %name%
 label-unfocused-foreground = ${colors.i3_unfocused_foreground}
@@ -233,7 +236,7 @@ interface = wlp2s0
 interval = 3.0
 ping-interval = 1
 
-format-packetloss = <animation-packetloss> <label-connected>
+#format-packetloss = <animation-packetloss> <label-connected>
 format-connected = <ramp-signal> <label-connected>
 
 label-connected = %essid% 
@@ -303,4 +306,13 @@ format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 format-padding = 3
 
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+exec = $HOME/.config/polybar/weather
+
 # vim:filetype=dosini
+# mousepad:filetype=dosini
