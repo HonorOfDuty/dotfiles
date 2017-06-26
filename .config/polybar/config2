@@ -1,0 +1,336 @@
+[colors]
+background = ${xrdb:color0}
+foreground = ${xrdb:color6}
+foreground-alt=${xrdb:color0}
+
+i3_background = ${xrdb:color3}
+i3_foreground = ${xrdb:color7}
+i3_urgent_background = ${xrdb:color5}
+i3_unfocused_foreground = ${xrdb:color2}
+
+status_good = ${xrdb:color7}
+status_sub = ${xrdb:color6}
+status_bad = ${xrdb:color5}
+
+line-color = #FFFFFF
+transparent = #00FFFFFF
+
+tray_background = #60e7ecdb
+
+[const]
+width = 100%
+height = 28
+clickarea = 25
+
+border-left-size = 40
+border-right = 40
+border-top = 6
+
+module-margin-left = 1
+module-margin-right = 1
+
+spacing = 1
+line-height = 4 
+
+line-size = 3
+
+radius = 4
+radius-top = 4
+radius-bottom = 0
+
+font-0 = FontAwesome:size=11;3
+font-1 = Iosevka Medium:size=13;2
+
+;SanFranSiscoDisplay:size=14:weight=regular;0;
+;
+[bar/center]
+monitor = VGA1
+width = ${const.width}
+height = ${const.height}
+clickareas = ${const.clickareas}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.line-color}
+
+line-size = ${const.line-size}
+
+border-color = ${colors.transparent}
+border-left-size = ${const.border-left-size}
+border-right-size = ${const.border-right}
+border-top-size = ${const.border-top}
+;border-radius-top = ${const.radius-top}
+;border-radius-bottom = ${const.radius-bottom}
+;border-radius = ${const.radius}
+
+radius = 4
+
+module-margin-left = ${const.module-margin-left}
+module-margin-right = ${const.module-margin-right}
+
+spacing = ${const.spacing}
+lineheight = ${const.lineheight}
+
+font-0 = ${const.font-0}
+font-1 = ${const.font-1}
+
+modules-left = i3 
+modules-center = xwindow mpd
+modules-right = wireless-network battery volume clock
+
+[bar/left]
+monitor = HDMI1
+modules-left = i3 
+modules-center = mpd
+modules-right = wireless-network battery volume clock
+
+width = ${const.width}
+height = ${const.height}
+clickareas = ${const.clickareas}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.line-color}
+
+border-color = ${colors.transparent}
+border-left-size = ${const.border-left-size}
+border-right = ${const.boarder-right}
+border-top = ${const.boarder-top}
+
+module-margin-left = ${const.module-margin-left}
+module-margin-right = ${const.module-margin-right}
+
+spacing = ${const.spacing}
+lineheight = ${const.lineheight}
+
+font-0 = ${const.font-0}
+font-1 = ${const.font-1}
+
+;tray-position = right
+tray-background = ${colors/tray_background}
+
+[bar/right]
+monitor = DP-2
+modules-left = i3 
+modules-center = 
+modules-right = volume clock
+
+width = ${const.width}
+height = ${const.height}
+clickareas = ${const.clickareas}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.linecolor}
+
+border-color = ${colors.transparent}
+border-left-size = ${const.boarder-left}
+border-right = ${const.boarder-right}
+border-top = ${const.boarder-top}
+
+module-margin-left = ${const.module-margin-left}
+module-margin-right = ${const.module-margin-right}
+
+spacing = ${const.spacing}
+lineheight = ${const.lineheight}
+
+font-0 = ${const.font-0}
+font-1 = ${const.font-1}
+
+;tray-position = right
+tray-background = ${colors/tray_background}
+
+[bar/laptop]
+monitor = LVDS1
+modules-left = i3 
+modules-center = xwindow
+modules-right = volume wireless-network battery clock
+
+width = ${const.width}
+height = 35 
+
+clickareas = ${const.clickareas}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.line-color}
+
+line-size = ${const.line-size}
+
+border-color = ${colors.transparent}
+border-left-size = ${const.border-left-size} 
+border-right-size = ${const.border-right}
+border-top-size = ${const.border-top}
+;border-radius = ${const.radius}
+
+radius = 4
+
+module-margin-left = ${const.module-margin-left}
+module-margin-right = ${const.module-margin-right}
+
+spacing = ${const.spacing}
+lineheight = ${const.lineheight}
+
+font-0 = ${const.font-0}
+font-1 = ${const.font-1}
+
+;tray-position = right
+tray-background = ${colors/tray_background}
+tray-detached = false
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 99
+
+format-charging =<animation-charging>  %{F#e9a15f}%{F-} <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.status_bad}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.status_sub}
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = 
+bar-capacity-fill-foreground = ${colors.good}
+bar-capacity-fill-font = 3
+bar-capacity-empty = 
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = ${colors.bad}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 1000
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+
+index-sort = true
+
+label-focused = %name%
+label-focused-foreground = ${colors.i3_foreground}
+label-focused-background = ${colors.i3_background}
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 6
+label-focused-maxlen = 2 
+label-focused-ellipsis = true
+
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.i3_unfocused_foreground}
+label-unfocused-padding = 4
+label-unfocused-maxlen = 2
+label-unfocused-ellipsis = false
+
+label-visible = %name%
+label-visible-padding = 4
+label-visible-maxlen = 2 
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.i3_foreground}
+label-urgent-background = ${colors.i3_urgent_background}
+label-urgent-padding = 4
+label-urgent-maxlen = 2
+
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+ping-interval = 1
+
+#format-packetloss = <animation-packetloss> <label-connected>
+format-connected = <ramp-signal> <label-connected>
+
+label-connected = %essid% 
+label-disconnected = not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.status_bad}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.status_sub}
+ramp-signal-2 = 
+ramp-signal-2-foreground = ${colors.status_sub}
+ramp-signal-3 = 
+ramp-signal-3-foreground = ${colors.status_good}
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.status_good}
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.status_bad}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.status_sub}
+animation-packetloss-framerate = 500
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted = %{F#dd7e66}%{F-} %{F#CCC}muted%{F-}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <label-time>  <label-song>
+format-online =     <label-song>
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-seekb = 
+icon-seekf = 
+icon-random = 
+icon-repeat = 
+
+[module/play_music]
+type = custom/script
+exec = ~/.scripts/play_music.py
+
+label-foreground = ${colors.i3_foreground}
+label-maxlen = 50
+label-ellipsis = true
+# label-underline = 
+
+[module/clock]
+type = internal/date
+interval = 1
+date = %{F-}%{B-}     %m-%d  |      %H:%M  %{F-}%{B-}
+
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 3
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+exec = $HOME/.config/polybar/weather
+
+[module/xwindow]
+type = intertnal/xwindow
+label = %title:0:60:...%
+
+# vim:filetype=dosini
+# mousepad:filetype=dosini
