@@ -1,7 +1,7 @@
 Here are configs for my polybar, most of the configs are from other ppl.  
 I edited them to my liking, if I had the sources i would linke em here but it dont
-
-#Previews#
+ 
+# Previews
 
 **config**
 ![image](https://github.com/HonorOfDuty/dotfiles/blob/master/.config/polybar/examples/2017-06-26-165228_1359x42_scrot.png)
