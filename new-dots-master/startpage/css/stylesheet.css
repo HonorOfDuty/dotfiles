@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
+
+.hl-red {
+    color: #ffeefc;
+}
+
+.hl-g {
+    color: #afda6e;
+}
+
+.hl-orange {
+    color: #c16772;
+}
+
+.hl-green {
+    color: #c16772;
+}
+
+.hl-blue {
+    color: #7aa1dc;
+}
+
+.hl-gray {
+    color: #c16772;
+}
+
+body {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #141021;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    margin-top: 10%;
+    padding: 0;
+    font-family: "Monaco";
+}
+
+#header {
+    font-family: "Monaco";
+    font-weight: 200;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0px;
+}
+
+#header span {
+    font-family: "Monaco";
+    font-weight: 200;
+    font-size: 14px;
+    color: #f2f2f2;
+}
+
+.search-row {
+    width: 1010px;
+    height: 50px;
+    margin: 10px auto 20px auto;
+    padding: 0px 20px;
+    background-color: #141021;
+    border: solid 2px #c16772;
+    opacity: 0.8;
+    border-radius: 0px;
+}
+
+#search-field {
+    width: 1010px;
+    height: 50px;
+    padding: 0px 10px 0px 0px;
+    background-color: #141021;
+    border: solid 0px #1a1d24;
+    font-family: "Monaco";
+    font-size: 14px;
+    color: #ffeefc;
+    float: left;
+    outline: none;
+}
+
+#search-field::-moz-placeholder {
+    color: #8c8c8b !important;
+}
+
+.terminal-con {
+    margin: auto;
+    text-align: center;
+}
+
+.terminal-row {
+    width: 1010px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: #141021;
+    border: solid 2px #312842;
+    border-bottom: none;
+    text-align: left;
+}
+.terminal-a {
+    width: 1010px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: #141021;
+    border: solid 2px #312842;
+    text-align: left;
+}
+
+.i1 {
+    padding: 10px 0px 0px 20px !important;
+}
+
+.ext-top {
+    padding: 20px 20px 0px 20px !important;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.ext-btm {
+    padding: 0px 20px 20px 20px !important;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.terminal-label {
+    height: 20px;
+    padding: 10px 0px;
+    font-family: "Monaco";
+    font-size: 14px;
+    color: #ffeefc;
+    width: 100%;
+    text-align: left;
+}
+
+.ext {
+    width: 100% !important;
+    height: 10px !important;
+}
+
+.terminal-innerCon {
+    width: 1010px;
+    height: 300px;
+    margin: auto;
+    padding: 15px 15px;
+    background-color: #141021;
+    border: solid 2px #312842;
+    border-top: none;
+}
+
+.favCon {
+    width: 290px;
+    margin: 20px 20px;
+    padding: 0px;
+    float: left;
+}
+
+.favCon-header {
+    padding: 5px 0px;
+    background: #141021;
+    font-family: "Monaco";
+    font-size: 14px;
+    color: #c16772;
+}
+
+.favCon-body {
+    margin: 0px;
+    padding: 5px 0px 10px 0px;
+    text-align: center;
+}
+
+.favCon-body a {
+    border: none;
+}
+
+.favCon-el {
+    width: 95%;
+    height: 30px;
+    margin: 5px auto 0px auto;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.favCon-el:hover {
+    text-decoration: underline red;
+    border-bottom: 2px #c16772;
+}
+
+.favCon-el:hover span {
+    color: #ffeefc;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #c16772;
+}
+
+.favCon-el-content {
+    width: 100%;
+    height: 100%;
+    padding: 5px 0px 0px 0px;
+    font-family: "Monaco";
+    font-size: 14px;
+    color: #f2f2f2;
+    text-align: left;
+    float: left;
+}
+form {
+	display: inline;
+}
+
+input 	{
+	display: inline;
+	background: none;
+	display: inline;
+	border: none;
+	color: #ffeefc;
+        width: 70%;
+	font-size: 14px;
+}
