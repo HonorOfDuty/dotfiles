@@ -87,6 +87,8 @@ source $ZSH/oh-my-zsh.sh
 (wal -r &)
 alias lock=' ./lock.sh'
 alias vtop='vtop -t brew'
+#alias mpd.socket ='sudo systemctl stop mpd.socket'
+#alias mpd.service ='sudo systemctl stop mpd.service'
 #export TERM="xterm-256color"
 
 #powerline options
@@ -95,4 +97,3 @@ POWERLINE_RIGHT_COLOR_BACK="red"
 POWERLINE_HIDE_HOST_NAME="true"
 POWERLINE_NO_BLANK_LINE="false" 
 POWERLINE_DATE_FORMAT="%D{%d-%m}"
-

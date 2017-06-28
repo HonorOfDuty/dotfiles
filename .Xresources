@@ -1,11 +1,13 @@
+
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
-URxvt.font: xft:Source Code Pro for Powerline:pixelsize=11
+URxvt.font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 URxvt.letterSpace: 0
+URxvt.antialias: false
 
-*antialias:  true
+*antialias:  true 
 *autohint:   true
 

@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 425 -opacity "85" -bw 0 -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 425 -opacity "85" -bw 0 -font "System San Francisco Display 18" -color-window "argb:ce374b3e"
 
 
 # change focus
@@ -102,12 +102,13 @@ set $workspace2 ""
 set $workspace3 "" 
 set $workspace4 "" 
 set $workspace5 "" 
-
+set $workspace6 ""
 #1 Terminals 
 #2 Mail 
 #3 Palemoon 
 #4 Thesis 
 #5 PDF 
+#6 Youtube 
 
 #bind workspaces to specific screen
 workspace $workspace2 output LVDS1
@@ -119,7 +120,7 @@ bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace 6
+bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -131,7 +132,7 @@ bindsym $mod+Shift+2 move container to $workspace2
 bindsym $mod+Shift+3 move container to $workspace3
 bindsym $mod+Shift+4 move container to $workspace4
 bindsym $mod+Shift+5 move container to $workspace5
-bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+6 move container to $workspace6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -208,17 +209,19 @@ new_window pixel 3
 
 #custom keybinds
 bindsym $mod+shift+x exec ./lock.sh
-bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/
+bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/Minimal -o $HOME/.config/polybar/launch.sh 
 bindsym $mod+shift+s exec i3exit suspend
 
 #startup programs
-exec --no-startup-id wal -i $HOME/Pictures/Wallpapers
+exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/Minimal
 exec killall -q -g mpd
 exec_always compton --config $HOME/.config/compton/compton.conf -b
+exec_always --no-startup-id xinput set-prop 14 279 1
 
 #Screenlayouts
 exec_always xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 280x1080 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 bindsym $mod+ctrl+1 exec xrandr --auto
+bindsym $mod+ctrl+2 exec xrandr --output HDMI1 --primary --mode 1920x1080 --pos 1366x0 --rotate normal --output LVDS1 --off --output VIRTUAL1 --off --output DP1 --off --output VGA1 --off
 
 # Pulse Audio Controls
 bindsym XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up #increase sound volume
