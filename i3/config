@@ -45,6 +45,9 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 425 -opacity "85" -bw 0 -font "System San Francisco Display 18" -color-window "argb:ce374b3e"
 
+# launch urxvt launcher
+bindsym $mod+shift+d urxvt -name "launcher" -e sh -c 'LAUCNHER=1 /bin/zsh -i -t
+
 
 # change focus
 bindsym $mod+j focus left
@@ -127,12 +130,12 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to $workspace1
-bindsym $mod+Shift+2 move container to $workspace2
-bindsym $mod+Shift+3 move container to $workspace3
-bindsym $mod+Shift+4 move container to $workspace4
-bindsym $mod+Shift+5 move container to $workspace5
-bindsym $mod+Shift+6 move container to $workspace6
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -140,6 +143,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 assign [class="Geary"] $workspace2
 assign [class="Pale moon"] $workspace3
+assign [class="qutebrowser"] $workspace3
 assign [class="lyx"] $workspace4
 assign [class="qpdfview"] $workspace5
 
@@ -164,10 +168,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -206,17 +210,17 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #set window title+border style
 new_window pixel 3
-
+for_window [class="mpv"] border none
 #custom keybinds
-bindsym $mod+shift+x exec ./lock.sh
-bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/Minimal -o $HOME/.config/polybar/launch.sh 
+bindsym $mod+shift+x exec $HOME/dotfiles-sasuh-clone/new-dots-master/./lock.sh
+bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/Minimal -o $HOME/.config/polybar/reload+dunst.sh
 bindsym $mod+shift+s exec i3exit suspend
 
 #startup programs
 exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/Minimal
 exec killall -q -g mpd
 exec_always compton --config $HOME/.config/compton/compton.conf -b
-exec_always --no-startup-id xinput set-prop 14 279 1
+exec_always --no-startup-id xinput set-prop 15 297 1
 
 #Screenlayouts
 exec_always xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 280x1080 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
