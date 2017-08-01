@@ -1,0 +1,357 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = ${xrdb:color0:#222}
+;background = ${xrdb:foreground:#FFF}
+background-alt = ${xrdb:color0:#FFF}
+foreground = ${xrdb:color7:#222}
+;foreground = ${xrdb:background:#FFF}
+foreground-alt = #5a5760
+
+[bar/title]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 600
+height = 35
+offset-x = 15
+offset-y = 10
+fixed-center = true
+
+background =#00000000
+foreground = ${colors.background}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = xwindow
+
+
+
+;wm-restack = i3
+
+[bar/cpu]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 90 
+height = 35
+offset-x = 517
+offset-y = 10
+fixed-center = true
+
+radius = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = cpu
+
+override-redirect = true
+
+[bar/memory]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 90 
+height = 35
+offset-x = 617
+offset-y = 10
+fixed-center = true
+
+radius = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = memory
+override-redirect = true
+
+[bar/temperature]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 85
+height = 35
+offset-x = 717
+offset-y = 10
+fixed-center = true
+
+radius = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = temperature
+override-redirect = true
+
+[bar/workspace]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 330
+height = 35
+offset-x = 812
+offset-y = 10
+fixed-center = true
+
+radius = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-center = i3
+override-redirect = true
+
+[bar/volume]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 90
+height = 35
+offset-x = 1152
+offset-y = 10
+fixed-center = true
+
+radius = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = volume
+override-redirect = true
+
+[bar/clock]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 195
+height = 35
+offset-x = 1252
+offset-y = 10
+fixed-center = true
+
+radius = 5
+
+background = &{colors.foreground}
+foreground = ${colors.background}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = date
+override-redirect = true
+
+[bar/tray]
+monitor = VGA1
+monitor-fallback = LVDS1
+width = 500 
+height = 35
+offset-x = 1745
+offset-y = 10
+fixed-center = true
+
+background = #00000000
+foreground = ${colors.background}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka Medium:pixelsize=13;2
+font-1 = FontAwesome:size=11;3
+
+modules-left = emptymenu
+
+tray-position = right
+override-redirect = true
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 50
+
+[module/i3]
+type = internal/i3
+override-
+
+label-focused = 
+label-focused-foreground = ${xrdb:color6:#FFF}
+label-focused-padding = 1
+
+label-occupied = 
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 1
+
+label-urgent = 
+label-urgent-background = ${xrdb:color1:#FFF}
+label-urgent-padding = 1
+
+label-empty = 
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = " CPU "
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.foreground}
+label = " %percentage%%"
+
+[module/memory]
+type = internal/memory
+interval = 1
+format-prefix = " MEM "
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.foreground}
+label = " %percentage_used%%"
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %a %d %b
+
+time = %H:%M
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.foreground}
+
+label = " %date% %time%"
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 7
+warn-temperature = 60
+
+format = <label>
+format-underline = #f50a4d
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.foreground}
+
+label = " %temperature%"
+
+[module/volume]
+type = internal/volume
+
+master-soundcard = default
+master-mixer = Master
+mapping = true
+
+label-muted = " MUTE"
+label-volume = " %percentage%%"
+
+format-volume = <label-volume>
+
+format-volume-prefix = "  "
+format-volume-prefix-foreground = ${colors.background}
+format-volume-prefix-background = ${colors.foreground}
+
+format-muted-prefix = "  "
+format-muted-prefix-foreground = ${colors.background}
+format-muted-prefix-background = ${colors.foreground}
+
+[module/emptymenu]
+type = custom/menu
+
+label-open =
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = under
+
+[global/wm]
+margin-top = 0
+margin-bottom = 10
+
+; vim:ft=dosini
