@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Input Mono Condensed 8
+font pango:Roboto 19
+for_window [class=".*"] title_format "<span font='Artwiz Lime 8'> >  %title</span>"
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -43,10 +44,11 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 425 -opacity "85" -bw 0 -font "System San Francisco Display 18" -color-window "argb:ce374b3e"
+###bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 425 -opacity "85" -bw 0 -font "System San Francisco Display 18" -color-window "argb:ce374b3e"
+bindsym $mod+d exec rofi -show run -lines 6 -separator-style solid -font "misc tamsyn 16" -width 35 -hide-scrollbar
 
 # launch urxvt launcher
-bindsym $mod+shift+d urxvt -name "launcher" -e sh -c 'LAUCNHER=1 /bin/zsh -i -t
+bindsym $mod+shift+d  urxvt -name "launcher" -e sh -c 'LAUCNHER=1 /bin/zsh -i -t
 
 
 # change focus
@@ -209,18 +211,21 @@ client.background       $bg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 
 #set window title+border style
-new_window pixel 3
+new_window normal 0
 for_window [class="mpv"] border none
+
 #custom keybinds
 bindsym $mod+shift+x exec $HOME/dotfiles-sasuh-clone/new-dots-master/./lock.sh
-bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/Minimal -o $HOME/.config/polybar/reload+dunst.sh
+bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/Scapes -o $HOME/.config/polybar/launch.sh
 bindsym $mod+shift+s exec i3exit suspend
 
 #startup programs
-exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/Minimal
+exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/Scapes
 exec killall -q -g mpd
 exec_always compton --config $HOME/.config/compton/compton.conf -b
 exec_always --no-startup-id xinput set-prop 15 297 1
+exec_always --no-startup-id xinput set-prop 14 280 1
+exec_always --no-startup-id xinput set-prop 16 298 1
 
 #Screenlayouts
 exec_always xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 280x1080 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
@@ -240,3 +245,4 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 #decrease screen brightnes
 #smart_gaps on
 gaps inner 10
 gaps outer 15
+
