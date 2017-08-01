@@ -223,9 +223,9 @@ override-redirect = true
 [bar/tray]
 monitor = VGA1
 monitor-fallback = LVDS1
-width = 500 
+width = 250 
 height = 35
-offset-x = 1745
+offset-x = 1650
 offset-y = 10
 fixed-center = true
 
@@ -244,7 +244,7 @@ module-margin-right = 2
 font-0 = Iosevka Medium:pixelsize=13;2
 font-1 = FontAwesome:size=11;3
 
-modules-left = emptymenu
+modules-left = mpd
 
 tray-position = right
 override-redirect = true
@@ -342,6 +342,13 @@ format-muted-prefix-background = ${colors.foreground}
 type = custom/menu
 
 label-open =
+
+[module/mpd]
+type = custom/script
+exec = $HOME/.config/polybar/Zscroll.sh
+tail = true
+
+label-foreground = ${colors.background}
 
 [settings]
 screenchange-reload = true

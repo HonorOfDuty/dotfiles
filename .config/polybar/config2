@@ -19,7 +19,7 @@ tray_background = #60e7ecdb
 
 [const]
 width = 100%
-height = 28
+height = 32
 clickarea = 25
 
 border-left-size = 40
@@ -39,8 +39,9 @@ radius-top = 4
 radius-bottom = 0
 
 font-0 = FontAwesome:size=11;3
-font-1 = Iosevka Medium:size=13;2
-
+font-1 = misc tamsyn:pixelsize=13;2
+font-2 = Unifont:size=11;3
+font-3 = Siji:pixelsize=11;3
 ;SanFranSiscoDisplay:size=14:weight=regular;0;
 ;
 [bar/center]
@@ -74,8 +75,8 @@ lineheight = ${const.lineheight}
 font-0 = ${const.font-0}
 font-1 = ${const.font-1}
 
-modules-left = i3 
-modules-center = xwindow mpd
+modules-left = i3 xwindow 
+modules-center =  mpd
 modules-right = wireless-network battery volume clock
 
 [bar/left]
@@ -188,7 +189,7 @@ format-charging =<animation-charging>  %{F#e9a15f}%{F-} <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
-ramp-capacity-0 = 
+ramp-capacity-0 = a
 ramp-capacity-0-foreground = ${colors.status_bad}
 ramp-capacity-1 = 
 ramp-capacity-1-foreground = ${colors.status_sub}
@@ -287,20 +288,11 @@ ramp-volume-2 = 
 ramp-volume-3 = 
 
 [module/mpd]
-type = internal/mpd
-host = 127.0.0.1
-port = 6600
-;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <label-time>  <label-song>
-format-online =     <label-song>
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-seekb = 
-icon-seekf = 
-icon-random = 
-icon-repeat = 
+type = custom/script
+exec = $HOME/.config/polybar/Zscroll.sh
+tail = true
+
+label-foreground = ${colors.foreground}
 
 [module/play_music]
 type = custom/script
@@ -314,11 +306,12 @@ label-ellipsis = true
 [module/clock]
 type = internal/date
 interval = 1
-date = %{F-}%{B-}     %m-%d  |      %H:%M  %{F-}%{B-}
+date =  %H:%M  %{F-}%{B-}
 
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 format-padding = 3
+
 
 [module/weather]
 type = custom/script
@@ -329,8 +322,9 @@ format-prefix-foreground = ${colors.foreground}
 exec = $HOME/.config/polybar/weather
 
 [module/xwindow]
-type = intertnal/xwindow
-label = %title:0:60:...%
+type = internal/xwindow
+label = %title%
+label-maxlen = 50
 
 # vim:filetype=dosini
 # mousepad:filetype=dosini
