@@ -216,7 +216,7 @@ for_window [class="mpv"] border none
 
 #custom keybinds
 bindsym $mod+shift+x exec $HOME/dotfiles-sasuh-clone/new-dots-master/./lock.sh
-bindsym $mod+shift+w exec wal -i /home/chrisvossen/Pictures/Wallpapers/Scapes -o $HOME/.config/polybar/launch.sh
+bindsym $mod+shift+w exec wal -i $HOME/Pictures/Wallpapers/Scapes -o $HOME/.config/polybar/launch.sh
 bindsym $mod+shift+s exec i3exit suspend
 
 #startup programs
