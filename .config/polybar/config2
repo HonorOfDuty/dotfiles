@@ -77,7 +77,7 @@ font-1 = ${const.font-1}
 
 modules-left = i3 xwindow 
 modules-center =  mpd
-modules-right = wireless-network battery volume clock
+modules-right = wireless-network battery volume clock powermenu
 
 [bar/left]
 monitor = HDMI1
@@ -251,7 +251,7 @@ interface = wlp2s0
 interval = 3.0
 ping-interval = 1
 
-#format-packetloss = <animation-packetloss> <label-connected>
+format-packetloss = <animation-packetloss> <label-connected>
 format-connected = <ramp-signal> <label-connected>
 
 label-connected = %essid% 
@@ -269,12 +269,12 @@ ramp-signal-3-foreground = ${colors.status_good}
 ramp-signal-4 = 
 ramp-signal-4-foreground = ${colors.status_good}
 
-animation-packetloss-0 = 
+animation-packetloss-0 = 
 animation-packetloss-0-foreground = ${colors.status_bad}
-animation-packetloss-1 = 
+animation-packetloss-1 = 
 animation-packetloss-1-foreground = ${colors.status_sub}
-animation-packetloss-framerate = 500
-
+animation-packetloss-framerate = 1000
+; 
 [module/volume]
 type = internal/volume
 
@@ -306,11 +306,11 @@ label-ellipsis = true
 [module/clock]
 type = internal/date
 interval = 1
-date =  %H:%M  %{F-}%{B-}
+date =  %H:%M
 
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
-format-padding = 3
+format-padding = 1
 
 
 [module/weather]
@@ -325,6 +325,37 @@ exec = $HOME/.config/polybar/weather
 type = internal/xwindow
 label = %title%
 label-maxlen = 50
+
+[module/powermenu]
+type = custom/menu
+
+label-open = "%{T4} %{T-}%{T4} %{T-}"
+label-close = 
+format = <label-toggle><menu>
+label-separator = " : "
+
+format-foreground = ${colors.background}
+format-background = ${colors.foreground}
+
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+menu-0-2 = 
+menu-0-2-exec = menu-open-3
+menu-0-3 = "  "
+
+menu-1-0 = 
+menu-1-0-exec = i3exit suspend
+menu-1-1 = "  "
+
+menu-2-0 = 
+menu-2-0-exec = i3exit reboot
+menu-2-1 = ""
+
+menu-3-0 = 
+menu-3-0-exec = systemctl shutdown
+menu-3-1 = ""
 
 # vim:filetype=dosini
 # mousepad:filetype=dosini
